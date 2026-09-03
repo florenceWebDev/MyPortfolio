@@ -714,8 +714,18 @@
 
       <!-- WEB PROJECT: Budget Request System -->
       <article class="work__card mix php">
-        <div class="work__card-img-wrapper">
-          <img src="assets/img/work2.jpg" alt="Budget Request System" class="work__card-img" />
+        <div class="work__card-img-wrapper work__gallery" data-project="Budget Request System">
+          <div class="work__gallery-track">
+            <img src="assets/img/projects/budget-request/budget-request-01.png" alt="Budget Request System secure login" class="work__card-img work__gallery-slide is-active" loading="lazy" />
+            <img src="assets/img/projects/budget-request/budget-request-02.png" alt="Budget Request System dashboard" class="work__card-img work__gallery-slide" loading="lazy" />
+            <img src="assets/img/projects/budget-request/budget-request-03.png" alt="Budget request creation form" class="work__card-img work__gallery-slide" loading="lazy" />
+            <img src="assets/img/projects/budget-request/budget-request-04.png" alt="Budget requests awaiting approval" class="work__card-img work__gallery-slide" loading="lazy" />
+            <img src="assets/img/projects/budget-request/budget-request-05.png" alt="Budget request review and approval screen" class="work__card-img work__gallery-slide" loading="lazy" />
+          </div>
+          <button class="work__gallery-btn work__gallery-btn--prev" type="button" aria-label="Previous Budget Request System screenshot"><i class="bx bx-chevron-left"></i></button>
+          <button class="work__gallery-btn work__gallery-btn--next" type="button" aria-label="Next Budget Request System screenshot"><i class="bx bx-chevron-right"></i></button>
+          <span class="work__gallery-counter" aria-live="polite">1 / 5</span>
+          <span class="work__gallery-hint"><i class="bx bx-expand-alt"></i> View gallery</span>
         </div>
         <div class="work__card-body">
           <div class="work__card-meta">
@@ -735,8 +745,20 @@
 
       <!-- WEB PROJECT: Inventory Management -->
       <article class="work__card mix php">
-        <div class="work__card-img-wrapper">
-          <img src="assets/img/work3.jpg" alt="Inventory Management" class="work__card-img" />
+        <div class="work__card-img-wrapper work__gallery" data-project="Inventory Management System">
+          <div class="work__gallery-track">
+            <img src="assets/img/projects/inventory-management/inventory-management-01.png" alt="Inventory Management System secure login" class="work__card-img work__gallery-slide is-active" loading="lazy" />
+            <img src="assets/img/projects/inventory-management/inventory-management-02.png" alt="Inventory Management System dashboard" class="work__card-img work__gallery-slide" loading="lazy" />
+            <img src="assets/img/projects/inventory-management/inventory-management-03.png" alt="Inventory asset catalog and filters" class="work__card-img work__gallery-slide" loading="lazy" />
+            <img src="assets/img/projects/inventory-management/inventory-management-04.png" alt="Adding an inventory asset to an order" class="work__card-img work__gallery-slide" loading="lazy" />
+            <img src="assets/img/projects/inventory-management/inventory-management-05.png" alt="Inventory checkout cart" class="work__card-img work__gallery-slide" loading="lazy" />
+            <img src="assets/img/projects/inventory-management/inventory-management-06.png" alt="Inventory endorsement order form" class="work__card-img work__gallery-slide" loading="lazy" />
+            <img src="assets/img/projects/inventory-management/inventory-management-07.png" alt="Inventory endorsement approval workflow" class="work__card-img work__gallery-slide" loading="lazy" />
+          </div>
+          <button class="work__gallery-btn work__gallery-btn--prev" type="button" aria-label="Previous Inventory Management System screenshot"><i class="bx bx-chevron-left"></i></button>
+          <button class="work__gallery-btn work__gallery-btn--next" type="button" aria-label="Next Inventory Management System screenshot"><i class="bx bx-chevron-right"></i></button>
+          <span class="work__gallery-counter" aria-live="polite">1 / 7</span>
+          <span class="work__gallery-hint"><i class="bx bx-expand-alt"></i> View gallery</span>
         </div>
         <div class="work__card-body">
           <div class="work__card-meta">
@@ -897,11 +919,11 @@
             <span class="contact__card-data">florence-gutierrez</span>
           </div>
         </a>
-        <a href="https://api.whatsapp.com/send?phone=9085894977" target="_blank" class="contact__card">
+        <a href="https://api.whatsapp.com/send?phone=639761505276" target="_blank" class="contact__card">
           <i class="bx bxl-whatsapp contact__card-icon"></i>
           <div>
             <h4 class="contact__card-title">WhatsApp</h4>
-            <span class="contact__card-data">908-589-4977</span>
+            <span class="contact__card-data">09761505276</span>
           </div>
         </a>
         <a href="https://github.com/Florenciong" target="_blank" class="contact__card">
@@ -965,9 +987,15 @@
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
   <div class="lightbox__backdrop" id="lightbox-backdrop"></div>
   <button class="lightbox__close" id="lightbox-close" aria-label="Close preview"><i class="bx bx-x"></i></button>
+  <button class="lightbox__nav lightbox__nav--prev" id="lightbox-prev" aria-label="Previous screenshot"><i class="bx bx-chevron-left"></i></button>
   <div class="lightbox__content">
     <img src="" alt="" class="lightbox__img" id="lightbox-img" />
+    <div class="lightbox__details">
+      <span class="lightbox__caption" id="lightbox-caption"></span>
+      <span class="lightbox__counter" id="lightbox-counter" aria-live="polite"></span>
+    </div>
   </div>
+  <button class="lightbox__nav lightbox__nav--next" id="lightbox-next" aria-label="Next screenshot"><i class="bx bx-chevron-right"></i></button>
 </div>
 
 <script src="./assets/js/scrollreveal.min.js"></script>
