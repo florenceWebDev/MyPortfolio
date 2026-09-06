@@ -1,6 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
   <title>FYG geometric monogram</title>
-  <rect width="64" height="64" rx="16" fill="#171923"/>
   <path d="M14 16h36v8H23v8h20v8H23v12h-9V16Z" fill="#ff765f"/>
   <path d="m34 16 8 14 8-14h10L46 39v13h-8V39L24 16h10Z" fill="#f8f3ea"/>
 </svg>
