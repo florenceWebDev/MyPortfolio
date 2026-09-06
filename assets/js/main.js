@@ -32,7 +32,7 @@ if (workContainer) {
       duration: 300
     },
     load: {
-      filter: '.automation'
+      filter: '.php'
     }
   });
 }
