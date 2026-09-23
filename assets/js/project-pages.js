@@ -77,7 +77,7 @@
       description: 'PHP queue management system with ticket generation, real-time serving displays, kiosk registration, and multi-counter support.',
       solution: 'The system coordinates ticket generation, service selection, live serving displays, and administrative controls across multiple counters.',
       capabilities: ['Ticket generation', 'Kiosk registration', 'Real-time serving displays', 'Multi-counter support'],
-      tools: ['PHP', 'MySQL', 'JavaScript'],
+      tools: ['PHP', 'MySQL', 'JavaScript'], featuredImage: 3,
       images: [
         ['assets/img/projects/queueing-system/queueing-system-01.png', 'Queueing System count summary'],
         ['assets/img/projects/queueing-system/queueing-system-02.png', 'Queueing System operator dashboard'],
@@ -143,7 +143,7 @@
     '<section class="case-study__hero section"><div class="container">',
     '<a class="case-study__back" href="../index.html#work"><i class="bx bx-arrow-back"></i> All projects</a>',
     '<div class="case-study__hero-grid"><div><span class="section__label">' + project.category + (project.caseNumber ? ' · ' + project.caseNumber : '') + '</span><h1 class="case-study__title">' + project.title + '</h1><p class="case-study__lead">' + project.description + '</p><div class="work__card-chips">' + chips(project.tools) + '</div><div class="case-study__hero-actions">' + (project.live ? '<a class="btn btn--primary" href="' + project.live + '" target="_blank" rel="noopener">Visit live site <i class="bx bx-link-external"></i></a>' : '<span class="work__card-internal"><i class="bx bx-lock-alt"></i> Internal system</span>') + '</div></div>',
-    '<div class="case-study__hero-visual"><img src="' + asset((project.images || [[project.image]])[project.images ? Math.min(2, project.images.length - 1) : 0][0]) + '" alt="' + project.title + ' project preview"></div></div></div></section>',
+    '<div class="case-study__hero-visual"><img src="' + asset((project.images || [[project.image]])[project.images ? (project.featuredImage || Math.min(2, project.images.length - 1)) : 0][0]) + '" alt="' + project.title + ' project preview"></div></div></div></section>',
     '<section class="case-study__details section"><div class="container case-study__details-grid">',
     '<div><span class="section__label">THE PROJECT</span><h2 class="section__title">Built around a clearer workflow.</h2></div>',
     '<div class="case-study__narrative"><div><h2>Challenge</h2><p>' + project.description + '</p></div><div><h2>Solution</h2><p>' + project.solution + '</p></div></div>',
