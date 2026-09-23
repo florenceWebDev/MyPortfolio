@@ -18,7 +18,7 @@ function scrollHeader() {
 window.addEventListener('scroll', scrollHeader);
 
 /* ----------------------------------------------------------
-   2. MIXITUP FILTER — Work / Case Studies
+   2. MIXITUP FILTER — Work / Projects
    ---------------------------------------------------------- */
 var workContainer = document.querySelector('.work__container');
 var mixerPortfolio;
@@ -128,8 +128,6 @@ sr.reveal('.services__card', { interval: 100 });
 
 sr.reveal('.work__card', { interval: 80 });
 
-sr.reveal('.process__step', { interval: 120 });
-
 sr.reveal('.pricing__card', { interval: 120 });
 
 sr.reveal('.experience__item', { interval: 120 });
@@ -140,9 +138,50 @@ sr.reveal('.contact__info-col', { origin: 'left' });
 sr.reveal('.contact__form-col', { origin: 'right' });
 
 /* ----------------------------------------------------------
-   6. IMAGE LIGHTBOX
+   6. PROJECT CARD NAVIGATION + IMAGE LIGHTBOX
    ---------------------------------------------------------- */
 (function () {
+  var caseStudyRoutes = {
+    'Automatically Process Client Attachments': 'projects/client-attachments.html',
+    'Automatically Qualify and Follow Up With Leads': 'projects/lead-follow-up.html',
+    'Turn One Piece of Content Into Multiple Posts': 'projects/content-repurposing.html',
+    'AI Customer Support Assistant': 'projects/ai-support-assistant.html',
+    'Domain Ichiba': 'projects/domain-ichiba.html',
+    'Bentahero.com': 'projects/bentahero.html',
+    'CraftShack Website': 'projects/craftshack.html',
+    'Prime Dasma Med': 'projects/prime-dasma-med.html',
+    'BCR Therapie': 'projects/bcr-therapie.html',
+    'The Home Of Kufis': 'projects/home-of-kufis.html',
+    'Queueing System': 'projects/queueing-system.html',
+    'Budget Request System': 'projects/budget-request-system.html',
+    'Inventory Management': 'projects/inventory-management.html'
+  };
+
+  document.querySelectorAll('.work__card').forEach(function (card) {
+    var title = card.querySelector('.work__card-title');
+    var route = title && caseStudyRoutes[title.textContent.trim()];
+    if (!route) return;
+
+    card.classList.add('work__card--linked');
+    card.setAttribute('role', 'link');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-label', 'Open ' + title.textContent.trim() + ' project');
+    card.insertAdjacentHTML('beforeend', '<span class="work__card-discover" aria-hidden="true"><span>Open project</span><i class="bx bx-right-arrow-alt"></i></span>');
+
+    function followCaseStudy(event) {
+      if (event.target.closest('a, button')) return;
+      window.location.href = route;
+    }
+
+    card.addEventListener('click', followCaseStudy);
+    card.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        window.location.href = route;
+      }
+    });
+  });
+
   var lightbox      = document.getElementById('lightbox');
   var lightboxImg   = document.getElementById('lightbox-img');
   var lightboxClose = document.getElementById('lightbox-close');
@@ -188,42 +227,10 @@ sr.reveal('.contact__form-col', { origin: 'right' });
     renderLightbox();
   }
 
-  document.querySelectorAll('.work__gallery').forEach(function (gallery) {
-    var slides = gallery.querySelectorAll('.work__gallery-slide');
-    var previous = gallery.querySelector('.work__gallery-btn--prev');
-    var next = gallery.querySelector('.work__gallery-btn--next');
-    var counter = gallery.querySelector('.work__gallery-counter');
-    var currentIndex = 0;
-
-    function showSlide(index) {
-      slides[currentIndex].classList.remove('is-active');
-      currentIndex = (index + slides.length) % slides.length;
-      slides[currentIndex].classList.add('is-active');
-      counter.textContent = (currentIndex + 1) + ' / ' + slides.length;
-    }
-
-    previous.addEventListener('click', function (event) {
-      event.stopPropagation();
-      showSlide(currentIndex - 1);
-    });
-
-    next.addEventListener('click', function (event) {
-      event.stopPropagation();
-      showSlide(currentIndex + 1);
-    });
-
-    gallery.addEventListener('click', function (event) {
-      if (event.target.closest('.work__gallery-btn')) return;
-      openLightbox(slides, currentIndex);
-    });
-  });
-
-  document.querySelectorAll('.work__card-img-wrapper').forEach(function (wrapper) {
-    if (wrapper.classList.contains('work__gallery')) return;
-
-    wrapper.addEventListener('click', function () {
-      var img = wrapper.querySelector('img');
-      if (img) openLightbox([img], 0);
+  var galleryImages = document.querySelectorAll('.case-study__gallery-item img');
+  document.querySelectorAll('.case-study__gallery-item').forEach(function (item, index) {
+    item.addEventListener('click', function () {
+      openLightbox(galleryImages, index);
     });
   });
 
