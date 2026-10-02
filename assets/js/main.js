@@ -18,39 +18,34 @@ function scrollHeader() {
 window.addEventListener('scroll', scrollHeader);
 
 /* ----------------------------------------------------------
-   2. MIXITUP FILTER — Work / Projects
+   2. WORK FILTER — Projects
    ---------------------------------------------------------- */
-var workContainer = document.querySelector('.work__container');
-var mixerPortfolio;
+var workFilters = document.querySelectorAll('.work__filter');
+var workCards = document.querySelectorAll('.work__card.mix');
 
-if (workContainer) {
-  mixerPortfolio = mixitup(workContainer, {
-    selectors: {
-      target: '.mix'
-    },
-    animation: {
-      duration: 300
-    },
-    load: {
-      filter: '.php'
-    }
+function filterWork(filterValue) {
+  workCards.forEach(function (card) {
+    card.hidden = filterValue !== 'all' && !card.matches(filterValue);
+  });
+  workFilters.forEach(function (filter) {
+    var active = filter.getAttribute('data-filter') === filterValue;
+    filter.classList.toggle('active-work', active);
+    filter.setAttribute('aria-pressed', active ? 'true' : 'false');
   });
 }
 
-var workFilters = document.querySelectorAll('.work__filter');
+if (workCards.length) filterWork('.featured');
 
 workFilters.forEach(function(filter) {
   filter.addEventListener('click', function() {
-    var filterValue = this.getAttribute('data-filter');
+    filterWork(this.getAttribute('data-filter'));
+  });
+});
 
-    workFilters.forEach(function(f) {
-      f.classList.remove('active-work');
-    });
-    this.classList.add('active-work');
-
-    if (mixerPortfolio) {
-      mixerPortfolio.filter(filterValue);
-    }
+document.querySelectorAll('[data-filter-target]').forEach(function(link) {
+  link.addEventListener('click', function() {
+    var target = document.querySelector('.work__filter[data-filter="' + this.getAttribute('data-filter-target') + '"]');
+    if (target) target.click();
   });
 });
 
@@ -107,6 +102,22 @@ if (navToggle && navMenu) {
   });
 }
 
+var cvMenu = document.querySelector('.hero__cv');
+if (cvMenu) {
+  document.addEventListener('click', function (event) {
+    if (!cvMenu.contains(event.target)) cvMenu.open = false;
+  });
+  cvMenu.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+      cvMenu.open = false;
+      cvMenu.querySelector('summary').focus();
+    }
+  });
+  cvMenu.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () { cvMenu.open = false; });
+  });
+}
+
 /* ----------------------------------------------------------
    5. SCROLLREVEAL ANIMATIONS
    ---------------------------------------------------------- */
@@ -125,8 +136,6 @@ sr.reveal('.about__image-col', { origin: 'left' });
 sr.reveal('.about__text-col', { origin: 'right' });
 
 sr.reveal('.services__card', { interval: 100 });
-
-sr.reveal('.work__card', { interval: 80 });
 
 sr.reveal('.pricing__card', { interval: 120 });
 
@@ -150,6 +159,9 @@ sr.reveal('.contact__form-col', { origin: 'right' });
     'Bentahero.com': 'projects/bentahero.html',
     'CraftShack Website': 'projects/craftshack.html',
     'Prime Dasma Med': 'projects/prime-dasma-med.html',
+    'Salt Lake Med': 'projects/salt-lake-med.html',
+    'DMC Sta. Ana': 'projects/dmc-sta-ana.html',
+    'Golden Pencil': 'projects/golden-pencil.html',
     'BCR Therapie': 'projects/bcr-therapie.html',
     'The Home Of Kufis': 'projects/home-of-kufis.html',
     'Queueing System': 'projects/queueing-system.html',

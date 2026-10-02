@@ -4,9 +4,10 @@
   var projects = {
     'client-attachments': {
       title: 'Automatically Process Client Attachments', category: 'AI Workflow', caseNumber: 'Case 01',
-      description: 'Reduce repetitive admin work by automatically organizing incoming files, extracting key details, and routing them to the right place.',
-      solution: 'A connected workflow handles incoming attachments, captures the information that matters, and keeps files moving to their intended destination.',
-      capabilities: ['Automated file organization', 'Key-detail extraction', 'Instant routing', 'Reduced repetitive admin'],
+      heading: 'From attachment to organized record',
+      description: 'A workflow example for organizing incoming files, extracting key details, and routing them to the right place.',
+      solution: 'Make.com connects the incoming file, Gemini-based extraction, Google Drive storage, and a Google Sheets record. The portfolio shows the workflow, not a verified time-savings measurement.',
+      capabilities: ['File organization', 'Key-detail extraction', 'Routing', 'Structured record'],
       tools: ['Make.com', 'Gemini AI', 'Google Drive', 'Google Sheets'], image: 'assets/img/automation-case-01.png'
     },
     'lead-follow-up': {
@@ -25,9 +26,9 @@
     },
     'ai-support-assistant': {
       title: 'AI Customer Support Assistant', category: 'Conversational AI', caseNumber: 'Case 04',
-      description: 'Deploy an intelligent AI assistant that handles customer queries 24/7, routes complex cases, and maintains context across conversations.',
-      solution: 'A conversational workflow handles routine client interactions while connecting more complex questions to the right next step.',
-      capabilities: ['24/7 client interactions', 'Context-aware responses', 'Complex-case routing', 'System handoffs'],
+      description: 'An assistant workflow for routine questions, context-aware replies, and routing cases that need a person.',
+      solution: 'The example connects n8n, OpenAI, webhooks, and Airtable to handle routine exchanges and hand off more complex cases.',
+      capabilities: ['Routine questions', 'Context-aware responses', 'Complex-case routing', 'System handoffs'],
       tools: ['n8n', 'OpenAI', 'Webhooks', 'Airtable'], image: 'assets/img/automation-case-04.png'
     },
     'domain-ichiba': {
@@ -46,17 +47,48 @@
     },
     'craftshack': {
       title: 'CraftShack Website', category: 'WordPress Website',
-      description: 'Custom WordPress site for CraftShack with dynamic content, responsive design, and optimized performance.',
-      solution: 'The WordPress implementation pairs a flexible editing experience with a responsive presentation built for everyday use.',
-      capabilities: ['Dynamic content', 'Responsive design', 'Performance-conscious build'],
-      tools: ['WordPress', 'PHP', 'CSS'], image: 'assets/img/craftshack.png', live: 'https://craftshack.ph/'
+      heading: 'An Elementor Pro build for CraftShack',
+      description: 'A marketing agency website I built in WordPress and Elementor Pro. The preview is from a previous site capture.',
+      contribution: 'I built the website in WordPress and Elementor Pro, including its page layouts and responsive presentation.',
+      solution: 'The Elementor Pro build gave the team editable sections while preserving a consistent presentation across pages.',
+      capabilities: ['Elementor Pro pages', 'Responsive layouts', 'Editable content'],
+      tools: ['WordPress', 'Elementor Pro', 'CSS'], image: 'assets/img/projects/wordpress-craftshack.jpg', live: 'https://craftshack.ph/', liveLabel: 'Website link'
     },
     'prime-dasma-med': {
       title: 'Prime Dasma Med', category: 'WordPress Website',
-      description: 'Custom WordPress website for Prime Dasma with dynamic content management and responsive design.',
-      solution: 'A tailored WordPress website gives the team a manageable content platform and a layout that adapts cleanly to every screen.',
-      capabilities: ['Custom WordPress build', 'Dynamic content management', 'Responsive design'],
-      tools: ['WordPress', 'PHP', 'CSS'], image: 'assets/img/primedasma.png', live: 'https://primedasmamed.com/'
+      heading: 'A live medical site built in Elementor Pro',
+      description: 'A live WordPress website I built for Prime Dasma Med using Elementor Pro.',
+      contribution: 'I built the website in WordPress and Elementor Pro and worked through the responsive page layouts.',
+      solution: 'The finished website presents the practice and its services in an editable WordPress build across desktop and mobile screens.',
+      capabilities: ['Elementor Pro pages', 'Responsive layouts', 'Editable content'],
+      tools: ['WordPress', 'Elementor Pro', 'CSS'], image: 'assets/img/projects/wordpress-prime-dasma-med.jpg', live: 'https://primedasmamed.com/'
+    },
+    'salt-lake-med': {
+      title: 'Salt Lake Med', category: 'WordPress Website',
+      heading: 'An Elementor Pro site for a medical center',
+      description: 'A medical center website I built in WordPress and Elementor Pro.',
+      contribution: 'I built the WordPress site and its Elementor Pro pages, including responsive content layouts.',
+      solution: 'The site presents the medical center, services, and updates through editable, mobile-responsive pages.',
+      capabilities: ['Elementor Pro pages', 'Responsive layouts', 'Editable content'],
+      tools: ['WordPress', 'Elementor Pro', 'CSS'], image: 'assets/img/projects/wordpress-salt-lake-med.jpg', live: 'https://saltlakemed.com.ph/'
+    },
+    'dmc-sta-ana': {
+      title: 'DMC Sta. Ana', category: 'WordPress Website',
+      heading: 'A medical center website in Elementor Pro',
+      description: 'A WordPress website I built for Doctors Medical Center Sta. Ana using Elementor Pro.',
+      contribution: 'I built the website in WordPress and Elementor Pro, including the responsive page presentation.',
+      solution: 'The site brings the center’s information, services, and updates into an editable website for desktop and mobile.',
+      capabilities: ['Elementor Pro pages', 'Responsive layouts', 'Editable content'],
+      tools: ['WordPress', 'Elementor Pro', 'CSS'], image: 'assets/img/projects/wordpress-dmc-sta-ana.jpg', live: 'https://dmcstaana.com.ph/'
+    },
+    'golden-pencil': {
+      title: 'Golden Pencil', category: 'WordPress Website',
+      heading: 'An agency website built in Elementor Pro',
+      description: 'An integrated marketing agency website I built in WordPress and Elementor Pro.',
+      contribution: 'I built the website in WordPress and Elementor Pro, including its responsive page layouts.',
+      solution: 'The site presents the agency’s services and work in an editable WordPress build.',
+      capabilities: ['Elementor Pro pages', 'Responsive layouts', 'Editable content'],
+      tools: ['WordPress', 'Elementor Pro', 'CSS'], image: 'assets/img/projects/wordpress-golden-pencil.jpg', live: 'https://goldenpencil.com/'
     },
     'bcr-therapie': {
       title: 'BCR Therapie', category: 'WordPress Website',
@@ -75,6 +107,8 @@
     'queueing-system': {
       title: 'Queueing System', category: 'PHP System', internal: true,
       description: 'PHP queue management system with ticket generation, real-time serving displays, kiosk registration, and multi-counter support.',
+      heading: 'From kiosk check-in to the serving counter',
+      contribution: 'I built the ticket-generation, kiosk-registration, service-selection, and multi-counter serving workflow.',
       solution: 'The system coordinates ticket generation, service selection, live serving displays, and administrative controls across multiple counters.',
       capabilities: ['Ticket generation', 'Kiosk registration', 'Real-time serving displays', 'Multi-counter support'],
       tools: ['PHP', 'MySQL', 'JavaScript'], featuredImage: 3,
@@ -89,7 +123,9 @@
     'budget-request-system': {
       title: 'Budget Request System', category: 'PHP System', internal: true,
       description: 'Internal financial workflow app for managing budget requests, departmental approvals, and expense tracking.',
-      solution: 'The application centralizes budget-request submission, departmental approval, and expense-tracking workflows in one internal system.',
+      heading: 'From request submission to departmental approval',
+      contribution: 'I built a PHP/MySQL system for request submission, departmental approvals, expense tracking, reporting, and role-based access.',
+      solution: 'A request form captures submissions, an approval view shows pending requests for review, and reporting brings request and expense records together. Role-based access separates staff actions from departmental review.',
       capabilities: ['Budget request creation', 'Departmental approvals', 'Expense tracking', 'Request review workflow'],
       tools: ['PHP', 'MySQL', 'Bootstrap'],
       images: [
@@ -103,6 +139,8 @@
     'inventory-management': {
       title: 'Inventory Management', category: 'PHP System', internal: true,
       description: 'Comprehensive inventory tracking system with stock monitoring, detailed reporting, and user access control.',
+      heading: 'A controlled path for assets and stock',
+      contribution: 'I developed the stock-monitoring, checkout, endorsement, approval, and user-permission workflows.',
       solution: 'The system brings inventory records, stock oversight, order handling, approval work, and access control into a structured internal workflow.',
       capabilities: ['Stock monitoring', 'Inventory catalog', 'Detailed reporting', 'User access control'],
       tools: ['PHP', 'MySQL', 'Bootstrap'],
@@ -142,11 +180,11 @@
     '<main class="case-study">',
     '<section class="case-study__hero section"><div class="container">',
     '<a class="case-study__back" href="../index.html#work"><i class="bx bx-arrow-back"></i> All projects</a>',
-    '<div class="case-study__hero-grid"><div><span class="section__label">' + project.category + (project.caseNumber ? ' · ' + project.caseNumber : '') + '</span><h1 class="case-study__title">' + project.title + '</h1><p class="case-study__lead">' + project.description + '</p><div class="work__card-chips">' + chips(project.tools) + '</div><div class="case-study__hero-actions">' + (project.live ? '<a class="btn btn--primary" href="' + project.live + '" target="_blank" rel="noopener">Visit live site <i class="bx bx-link-external"></i></a>' : '<span class="work__card-internal"><i class="bx bx-lock-alt"></i> Internal system</span>') + '</div></div>',
+    '<div class="case-study__hero-grid"><div><span class="section__label">' + project.category + (project.caseNumber ? ' · ' + project.caseNumber : '') + '</span><h1 class="case-study__title">' + project.title + '</h1><p class="case-study__lead">' + project.description + '</p><div class="work__card-chips">' + chips(project.tools) + '</div><div class="case-study__hero-actions">' + (project.live ? '<a class="btn btn--primary" href="' + project.live + '" target="_blank" rel="noopener">' + (project.liveLabel || 'Visit live site') + ' <i class="bx bx-link-external"></i></a>' : '<span class="work__card-internal"><i class="bx bx-lock-alt"></i> Internal system</span>') + '</div></div>',
     '<div class="case-study__hero-visual"><img src="' + asset((project.images || [[project.image]])[project.images ? (project.featuredImage || Math.min(2, project.images.length - 1)) : 0][0]) + '" alt="' + project.title + ' project preview"></div></div></div></section>',
     '<section class="case-study__details section"><div class="container case-study__details-grid">',
-    '<div><span class="section__label">THE PROJECT</span><h2 class="section__title">Built around a clearer workflow.</h2></div>',
-    '<div class="case-study__narrative"><div><h2>Challenge</h2><p>' + project.description + '</p></div><div><h2>Solution</h2><p>' + project.solution + '</p></div></div>',
+    '<div><span class="section__label">THE PROJECT</span><h2 class="section__title">' + (project.heading || 'Project scope and implementation') + '</h2></div>',
+    '<div class="case-study__narrative"><div><h2>' + (project.contribution ? 'What I built' : 'Project scope') + '</h2><p>' + (project.contribution || project.description) + '</p></div><div><h2>How it works</h2><p>' + project.solution + '</p></div></div>',
     '</div></section>',
     '<section class="case-study__capabilities section"><div class="container"><span class="section__label">WHAT IT SUPPORTS</span><div class="case-study__capability-grid">' + project.capabilities.map(function (item, index) { return '<div class="case-study__capability"><span>0' + (index + 1) + '</span><h3>' + item + '</h3></div>'; }).join('') + '</div></div></section>',
     '<section class="case-study__showcase section"><div class="container"><span class="section__label">PROJECT VISUALS</span><h2 class="section__title">A closer look at the build.</h2><div class="case-study__gallery">' + gallery() + '</div></div></section>',
